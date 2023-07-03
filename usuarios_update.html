@@ -1,0 +1,54 @@
+<<!doctype html>
+<html lang="en">
+<head>
+  <title>Producto Nuevo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+  <main>
+    <div class="card" id="app">
+      <form class="form">
+      <h2>Editar Usuario </h2>
+      <p>Modificar datos de:  {{nombre}}</p>
+ 
+        <label for="id">Id  </label>
+        <input type="number" class="txt" name="id" id="id" disabled v-model="id" >
+        <br><br>
+
+        <label for="usuario">Usuario  </label>
+        <input type="text" class="txt" name="usuario" id="usuario" v-model="usuario">
+        <br><br>
+
+        <label for="nombre">Nombre  </label>
+        <input type="text" class="txt" name="nombre" id="nombre" v-model="nombre">
+        <br><br>
+
+        <label for="email">Email  </label>
+        <input type="email" class="txt" name="email" id="email" v-model="email">
+        <br><br>
+
+        <label for="password">Password  </label>
+        <input type="password" class="txt" name="password" id="password" v-model="password">  
+        <br><br>
+
+      <button type="button" class="boton1" v-on:click="modificar()">Guardar</button>
+      <a href="/usuarios.html" class="boton1">Cancelar</a>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"> </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"> </script>
+  <script src="./js/main.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/usuarios_editar.js"></script>
+</body>
+</html>

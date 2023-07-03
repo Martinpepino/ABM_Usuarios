@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Administracion de usuarios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <main>
+        <div id="app" class="card">
+            <h1>Administracion de usuarios</h1>
+            <br>
+            <a  class="boton1" href="usuarios_nuevo.html">Nuevo usuario</a>
+            <br><br>
+            <div v-if="error">
+                <p>Lo sentimos ........</p>
+            </div>
+            <div v-else>
+                <section v-if="cargando">
+                    <div class="spinner-border"></div>
+                    <p>Cargando .....</p>
+                </section>
+                <section v-else>
+                    <div class="table-responsive">
+                        <table class="tabla">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Usuario</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class=""  v-for="adm in users" :key="users.id">
+                                    <td scope="row">{{adm.id}}</td>
+                                    <td>{{adm.usuario}}</td>
+                                    <td>{{adm.nombre}}</td>
+                                    <td>{{adm.email}}</td>
+                                    <td>
+                                        <label for="password" class="txt">{{protegida}}</label>
+                                        <button class="boton1" type="button" v-on:click="ver(adm.id,adm.password)">Ver</button>
+                                    </td>
+                                    <td>
+                    			<a class="boton1" :href="'usuarios_update.html?id='+ adm.id" >Editar</a>
+                                      <button type="button" class="boton2" v-on:click="eliminar(adm.id)" >Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+      <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+  integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+    <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script><!--Link de VUE-->
+    <script src="./js/usuarios.js"></script>
+</body>
+</html>
